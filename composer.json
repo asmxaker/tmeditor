@@ -1,5 +1,5 @@
 {
-    "name": "asm\tmeditor",
+    "name": "asm-laravel-admin-ext/tmeditor",
     "description": "Integrate tmeditor into laravel-admin",
     "type": "library",
     "license": "MIT",
