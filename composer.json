@@ -1,0 +1,29 @@
+{
+    "name": "laravel-admin-ext/tmeditor",
+    "description": "Integrate tmeditor into laravel-admin",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "asm",
+            "email": "asm@xaker.ru"
+        }
+    ],
+    "require": {
+        "php": ">=7.0.0",
+        "encore/laravel-admin": "~1.6"
+    },
+    "autoload": {
+        "psr-4": {
+            "Encore\\TMEditor\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Encore\\TMEditor\\TMEditorServiceProvider"
+            ]
+
+        }
+    }
+}
