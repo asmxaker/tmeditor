@@ -33,7 +33,7 @@ class Editor extends Textarea
     // ];
 
     protected static $js = [
-        'vendor/laravel-admin-ext/tmeditor/tinymce.min.js',
+        'vendor/asm-laravel-admin-ext/tmeditor/tinymce.min.js',
     ];
 
     public function render()
