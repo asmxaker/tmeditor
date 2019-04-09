@@ -46,17 +46,29 @@ class Editor extends Textarea
         //     'height' => 300,
         // ], $config));
 
-       $this->script = <<<EOT
-tinymce.init({ selector:'#{$this->id}', height: 500,
-  plugins: [
-    'advlist autolink lists link image charmap print preview anchor textcolor',
-    'searchreplace visualblocks code fullscreen',
-    'insertdatetime media table paste code help wordcount'
-  ],
-  toolbar: 'undo redo | formatselect | bold italic backcolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | removeformat | help'
-});
+//        $this->script = <<<EOT
+// tinymce.init({ selector:'#{$this->id}', height: 500,
+//   plugins: [
+//     'advlist autolink lists link image charmap print preview anchor textcolor',
+//     'searchreplace visualblocks code fullscreen',
+//     'insertdatetime media table paste code help wordcount'
+//   ],
+//   toolbar: 'undo redo | formatselect | bold italic backcolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | removeformat | help'
+// });
+//
+// EOT;
 
+//$config = (array) CKEditor::config('config'); //, $config
+
+$config = (array) TMEditor::config('config');
+$config = json_encode(array_merge([
+     'selector' => '#'.$this->id,
+ ], $config));
+//var_dump($config);
+$this->script = <<<EOT
+tinymce.init($config);
 EOT;
+
 // $('#{$this->id}').summernote($config);
 // $('#{$this->id}').on("summernote.change", function (e) {
 //     var html = $('#{$this->id}').summernote('code');

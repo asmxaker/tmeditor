@@ -21,12 +21,12 @@ class TMEditorServiceProvider extends ServiceProvider
             $this->loadViewsFrom($views, 'laravel-admin-tmeditor');
         }
 
-        // if ($this->app->runningInConsole() && $assets = $extension->assets()) {
-        //     $this->publishes(
-        //         [$assets => public_path('vendor/laravel-admin-ext/tmeditor')],
-        //         'laravel-admin-tmeditor'
-        //     );
-        // }
+         if ($this->app->runningInConsole() && $assets = $extension->assets()) {
+           $this->publishes(
+                 [$assets => public_path('vendor/asm-laravel-admin-ext/tmeditor')],
+                 'asm-laravel-admin-tmeditor'
+             );
+        }
 
         Admin::booting(function () {
             Form::extend('tmeditor', Editor::class);
