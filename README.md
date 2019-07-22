@@ -58,8 +58,9 @@ In the extensions section of the config/admin.php file, add some configuration t
 
 File upload controller example
 
-  <?
+
     namespace App\Admin\Controllers;
+    
     use Illuminate\Http\Request;
     use Illuminate\Support\Facades\Storage;
 
@@ -73,7 +74,7 @@ File upload controller example
          }
       }
     }
-  ?>
+
 
 Usage
 Use it in the form:
