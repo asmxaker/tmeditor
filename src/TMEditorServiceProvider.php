@@ -33,6 +33,4 @@ class TMEditorServiceProvider extends ServiceProvider
         });
     }
 
-
-
 }
