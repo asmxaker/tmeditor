@@ -27,6 +27,7 @@ class Editor extends Textarea
 
 
 $this->script = <<<EOT
+tinymce.remove('#$this->id');
 tinymce.init($config);
 EOT;
 
