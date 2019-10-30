@@ -76,9 +76,11 @@ File upload controller example
     }
 
 
-**Do not forget to add the path to the loader to the exceptions of the Csrf! TODO FIX **
+__Do not forget to add the path to the loader to the exceptions of the Csrf! TODO FIX__
 
-app/Http/Middleware/VerifyCsrfToken.php
+File app/Http/Middleware/VerifyCsrfToken.php
+
+
 
 use Illuminate\Foundation\Http\Middleware\VerifyCsrfToken as Middleware;
 
@@ -90,7 +92,6 @@ class VerifyCsrfToken extends Middleware
      * @var bool
      */
     protected $addHttpCookie = true;
-
     /**
      * The URIs that should be excluded from CSRF verification.
      *
