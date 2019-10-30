@@ -76,6 +76,33 @@ File upload controller example
     }
 
 
+**Do not forget to add the path to the loader to the exceptions of the Csrf! TODO FIX **
+
+app/Http/Middleware/VerifyCsrfToken.php
+
+use Illuminate\Foundation\Http\Middleware\VerifyCsrfToken as Middleware;
+
+class VerifyCsrfToken extends Middleware
+{
+    /**
+     * Indicates whether the XSRF-TOKEN cookie should be set on the response.
+     *
+     * @var bool
+     */
+    protected $addHttpCookie = true;
+
+    /**
+     * The URIs that should be excluded from CSRF verification.
+     *
+     * @var array
+     */
+    protected $except = [
+
+        'admin/file_oupload'
+    ];
+}
+
+
 Usage
 Use it in the form:
 
