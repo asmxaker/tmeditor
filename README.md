@@ -4,18 +4,18 @@ TinyMCE editor for Laravel-admin
 This is a laravel-admin extension that integrates TinyMCE into the laravel-admin form.
 
 Installation
-
+```
 composer require asm-laravel-admin-ext/tmeditor
-
+```
 Then
-
+```
 php artisan vendor:publish --tag=asm-laravel-admin-tmeditor
-
+```
 Configuration
 
 In the extensions section of the config/admin.php file, add some configuration that belongs to this extension.
 
-
+```
     'extensions' => [
 
     'tmeditor' => [
@@ -55,9 +55,9 @@ In the extensions section of the config/admin.php file, add some configuration t
 
     ]
 
-
+```	
 File upload controller example
-
+```
 
     namespace App\Admin\Controllers;
     
@@ -75,13 +75,12 @@ File upload controller example
       }
     }
 
-
+```
 __Do not forget to add the path to the loader to the exceptions of the Csrf! TODO FIX__
 
 File app/Http/Middleware/VerifyCsrfToken.php
 
-
-
+```
 use Illuminate\Foundation\Http\Middleware\VerifyCsrfToken as Middleware;
 
 class VerifyCsrfToken extends Middleware
@@ -102,12 +101,15 @@ class VerifyCsrfToken extends Middleware
         'admin/file_oupload'
     ];
 }
-
+```
 
 Usage
 Use it in the form:
-
+```
 $form->tmeditor('content');
-
+```
 // Set config
+```
 $form->tmeditor('content')->options(['lang' => 'fr', 'height' => 500]);
+```
+
