@@ -3,7 +3,6 @@
     "description": "Integrate tmeditor into laravel-admin",
     "type": "library",
     "license": "MIT",
-    "stability":"stable",
     "version":"1.0.2",
     "minimum-stability":"stable",
     "authors": [
@@ -13,8 +12,9 @@
         }
     ],
     "require": {
-        "php": ">=7.1.*",
-        "encore/laravel-admin": ">=1.6"
+        "php": ">=7.2",
+        "laravel/framework": ">=5.5",
+        "encore/laravel-admin": "^1.6.0"
     },
     "autoload": {
         "psr-4": {
