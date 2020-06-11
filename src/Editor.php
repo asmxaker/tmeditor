@@ -15,7 +15,7 @@ class Editor extends Textarea
 
     public function render()
     {
-        $uniqueId = $this->id.Str::random(32);
+        $this->id .= Str::random(32);
         $name = $this->formatName($this->column);
         $config = (array) TMEditor::config('config');
         foreach($config as $key=>$value){
@@ -24,12 +24,12 @@ class Editor extends Textarea
           }
         }
         $config = json_encode(array_merge([
-             'selector' => '#'.$uniqueId,
+             'selector' => '#'.$this->id,
          ], $config));
 
 
 $this->script = <<<EOT
-tinymce.remove('#$uniqueId');
+tinymce.remove('#$this->id');
 tinymce.init($config);
 EOT;
 
