@@ -3,6 +3,7 @@
 namespace Encore\TMEditor;
 
 use Encore\Admin\Form\Field\Textarea;
+use Illuminate\Support\Str;
 
 class Editor extends Textarea
 {
@@ -14,6 +15,7 @@ class Editor extends Textarea
 
     public function render()
     {
+        $uniqueId = $this->id.Str::random(32);
         $name = $this->formatName($this->column);
         $config = (array) TMEditor::config('config');
         foreach($config as $key=>$value){
@@ -22,12 +24,12 @@ class Editor extends Textarea
           }
         }
         $config = json_encode(array_merge([
-             'selector' => '#'.$this->id,
+             'selector' => '#'.$uniqueId,
          ], $config));
 
 
 $this->script = <<<EOT
-tinymce.remove('#$this->id');
+tinymce.remove('#$uniqueId');
 tinymce.init($config);
 EOT;
 
