@@ -16,6 +16,7 @@ class Editor extends Textarea
     public function render()
     {
         $this->id .= Str::random(32);
+        $this->id = preg_replace('/[-.?!)(,:]/', '',$this->id);
         $name = $this->formatName($this->column);
         $config = (array) TMEditor::config('config');
         foreach($config as $key=>$value){
