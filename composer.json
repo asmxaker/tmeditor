@@ -12,8 +12,8 @@
         }
     ],
     "require": {
-        "php": ">=7.2",
-        "laravel/framework": ">=5.5",
+        "php": "^7.2",
+        "laravel/framework": "^5.5",
         "encore/laravel-admin": "^1.6.0"
     },
     "autoload": {
