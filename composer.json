@@ -3,7 +3,6 @@
     "description": "Integrate tmeditor into laravel-admin",
     "type": "library",
     "license": "MIT",
-    "version":"1.0.2",
     "minimum-stability":"stable",
     "authors": [
         {
